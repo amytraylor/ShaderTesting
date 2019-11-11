@@ -3,6 +3,11 @@ PGraphics buf, buf2;
 PImage img, mask, copy;
 int counter = 0;
 int red, green, blue;
+int maxPix = 1, minPix = 0;
+float smooth = 0;
+float[] ranS;
+boolean grow=true;
+
 void setup() {
   size(1313, 1920, P2D);
   //buf = createGraphics(width, height, P2D);
@@ -22,6 +27,10 @@ void setup() {
   
   mask.loadPixels();
   println(mask.pixels.length);
+  ranS = new float[mask.pixels.length];
+  for(int i = 0; i<mask.pixels.length; i++){
+    ranS[i] = random(0, 5);
+  }
   for (int x = 0; x < mask.width; x++) {
     for (int y = 0; y < mask.height; y++) {
       int loc = x + y*width;
@@ -58,10 +67,25 @@ void draw() {
   for (int x = 0; x<copy.width; x++){
     for(int y = 0; y<copy.height; y++){
       int loc = x + y*width;
+       //controls size of blip 
+      if(grow){
+        if(smooth<maxPix){
+          smooth+=0.01;
+        } else {
+          grow=false;
+        }
+      }else {
+        if(smooth>0){
+          smooth-=0.01;
+        } else {
+          grow=true;
+        }
+      }
+      //println(smooth);
       if(copy.pixels[loc]<0){
         noStroke();
         fill(copy.pixels[loc]);
-        ellipse(x,y,random(5), random(5));
+        ellipse(x,y,ranS[loc]*smooth, ranS[loc]*smooth);
       }
     }
   }
