@@ -8,6 +8,7 @@ precision mediump int;
 uniform vec2 resolution;
 uniform float time;
 uniform sampler2D texture;
+uniform float mousex;
 
 void main(void) {
   vec2 uv_not = gl_FragCoord.xy / resolution.xy; 
@@ -16,7 +17,7 @@ void main(void) {
   //vec2 p = -1.0 + 2.0 * gl_FragCoord.xy / resolution.xy;
   
   //maths
-  float a = time*20.0;
+  float a = time*60.0;
   float d,e,f,g = 1.0/40.0,h,i,r,q;
   e = 400.0*(uv.x*0.5+0.5);
   f = 400.0*(uv.y*0.5+0.5);
@@ -42,6 +43,6 @@ void main(void) {
   //my add
   vec3 col = texture2D(texture, uv).xyz;
   vec3 monjori = vec3(f*i/1.6,i/2.0+d/13.0,i)*d*uv.x+vec3(i/1.3+d/8.0,i/2.0+d/18.0,i)*d*(1.0-uv.x);
-  gl_FragColor = vec4((col*0.75)+(monjori*0.25), 1.0);
+  gl_FragColor = vec4((col*0.98)+(monjori*mousex), 1.0);
   //gl_FragColor=vec4(vec3(f*i/1.6,i/2.0+d/13.0,i)*d*p.x+vec3(i/1.3+d/8.0,i/2.0+d/18.0,i)*d*(1.0-p.x),1.0);
 }

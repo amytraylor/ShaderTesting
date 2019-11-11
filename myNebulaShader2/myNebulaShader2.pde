@@ -15,32 +15,23 @@ void setup() {
   noStroke();
   //blendMode(DIFFERENCE);
   shader=createGraphics(width,height,P3D);
-  img = loadImage("Hawk.png");
-  mask = loadImage("Hawk_mask3.png");
+  img = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
+  mask = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg_mask3.png");
   //img.resize(int(img.width*0.5), int(img.height*0.5));
-  nebula = loadShader("monjori.glsl");
+  nebula = loadShader("monjori2.glsl");
   nebula.set("resolution", 600.f, 876.f);
+  nebula.set("texture", mask);
   //nebula.set("iResolution", float(width), float(height));
 }
 
 void draw() {
-  nebula.set("time", millis() / 500.0);
-  //image(img, 0, 0, width, height);
-  //shader.beginDraw();
-  ////shader.shader(nebula);
-  ////////shader.fill(0,255, 255, 10);
-  //////shader.rect(0,0,width,height);
-  ////shader.image(img, 0, 0, width, height);
-  //shader.filter(nebula);
-  //shader.image(img, 0, 0, width, height);
-  //shader.endDraw();
-  //image(shader, 0, 0, width, height);
-  // This kind of raymarching effects are entirely implemented in the
-  // fragment shader, they only need a quad covering the entire view 
-  // area so every pixel is pushed through the shader. 
-  //rect(0, 0, width, height);
-  //tint(255, 200);
-  //image(img, 0, 0, width, height);
+  nebula.set("texture", img);
+  nebula.set("time", millis() / 2000.0);
+  float mapmx = map(mouseX, 0, width, 0, 0.015);
+  float mapmy = map(mouseY, 0, width, 0, 4.0);
+  nebula.set("mousex", mapmx);
+  nebula.set("mousey", mapmy);
+
   shader(nebula);
   //tint(255, 25);
   image(img, 0, 0, width, height);
