@@ -15,16 +15,16 @@ void setup() {
   noStroke();
   //blendMode(DIFFERENCE);
   //shader=createGraphics(width,height,P2D);
-  img = loadImage("Hawk.png");
-  mask = loadImage("Hawk_mask2.png");
+  img = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Hawk.png");
+  mask = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Hawk.png");
   //img.resize(int(img.width*0.5), int(img.height*0.5));
-  nebula = loadShader("monjori.glsl");
-  nebula.set("resolution", 600.f, 876.f);
-  //nebula.set("iResolution", float(width), float(height));
+  nebula = loadShader("water.glsl");
+  //nebula.set("resolution", 600.f, 876.f);
+  nebula.set("iResolution", float(width), float(height));
 }
 
 void draw() {
-  nebula.set("time", millis() / 500.0);
+  nebula.set("iTime", millis() / 500.0);
   //image(img, 0, 0, width, height);
   //shader.beginDraw();
   //shader.shader(nebula);

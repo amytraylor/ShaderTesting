@@ -5,7 +5,7 @@
 
 // Water turbulence effect by joltz0r 2013-07-04, improved 2013-07-07
 
-#define PROCESSING_TEXTURE_SHADER
+
 // Redefine below to see the tiling...
 //#define SHOW_TILING
 
