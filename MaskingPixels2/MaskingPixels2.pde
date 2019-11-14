@@ -13,8 +13,10 @@ void setup() {
   blendMode(BLEND);
   //buf = createGraphics(width, height, P2D);
   //buf2 = createGraphics(width, height, P2D);
-  img = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
-  mask = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
+  img = loadImage("Greg1313_1920.png");
+  mask = img;
+  //  img = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
+  //mask = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
   copy = createImage(1313, 1920, ARGB);
   contrast = loadShader("colfrag.glsl");
   blurry = loadShader("blurFragTexture.glsl");

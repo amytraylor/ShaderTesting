@@ -13,7 +13,7 @@ uniform float mousex;
 uniform float mousey;
 uniform float mouseym;
 
-const vec3   atmosphereColor = vec3(0.2, 0.2, 0.0) * 1.6;
+const vec3   atmosphereColor = vec3(0.46, 0.44, 0.71) * 1.6;
 //const vec3   atmosphereColor = vec3(0.3, 0.6, 1.0) * 1.6;
 
 vec3 shadowedAtmosphereColor(vec2 fragCoord, vec2 iResolution, float minVal) {

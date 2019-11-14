@@ -14,17 +14,17 @@ int MAX_ITER = 15;//was 5
 out vec4 fragColor;
 //Shader Inputs
 
-uniform vec2      iResolution;     // viewport resolution (in pixels)
-uniform float     iTime;          // shader playback time (in seconds)
+uniform vec2     resolution;     // viewport resolution (in pixels)
+uniform float    time;          // shader playback time (in seconds)
 uniform sampler2D texture;
 
 
 
 void main(){
-	float time = iTime * .025+23.0;
-	//float time = iTime * .5+23.0;
+	float time = time * .025+23.0;
+	//float time = time * .5+23.0;
     // uv should be the 0-1 uv of texture...
-	vec2 uv_not = gl_FragCoord.xy/iResolution; 
+	vec2 uv_not = gl_FragCoord.xy/resolution; 
 	vec2 uv = vec2(uv_not.x, 1-uv_not.y);   
     vec2 p = mod(uv*TAU, TAU)-250.0;
 	vec2 i = vec2(p);
