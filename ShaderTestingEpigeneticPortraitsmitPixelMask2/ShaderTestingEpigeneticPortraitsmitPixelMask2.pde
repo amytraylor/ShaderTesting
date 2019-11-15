@@ -6,35 +6,46 @@ int maxPix = 1, minPix = 0;
 float smooth, smooth2 = 0;
 float[] ranS;
 boolean grow=true, grow2=false;
+boolean fourk=false;
+
+void settings() {
+  if (fourk) {
+    size(1313, 1920, P2D);
+  } else {
+    size(600, 876, P2D);
+  }
+}
 
 void setup() {
   frameRate(30);
-  //4k screen
-  /*size(1313, 1920, P2D);
-  //fullScreen(P2D);
-  noStroke();
-  img = loadImage("Greg1313_1920.png");
-  mask = loadImage("Greg1313_1920.png");
-  //img = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
-  //mask = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
-  copy = createImage(1313, 1920, ARGB);
-  copy2 = createImage(1313, 1920, ARGB);
-  sunburst = loadShader("suntexture.glsl");
-  sunburst.set("resolution", 1313.f, 1920.f);
-  sunburst.set("texture", mask);*/
-
-  //HD
-   size(600, 876, P2D);
-   noStroke();
-   img = loadImage("Greg600_876.png");
-   mask = img;
-   //img = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg600_876.png");
-   //mask = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg600_876.png");
-   copy = createImage(600, 876, ARGB);
-   copy2 = createImage(600, 876, ARGB);
-   sunburst = loadShader("suntexture.glsl");
-   sunburst.set("resolution", 600.f, 876.f);
-   sunburst.set("texture", mask);
+  if (fourk) {
+    //4k screen
+    //size(1313, 1920, P2D);
+    //fullScreen(P2D);
+    noStroke();
+    img = loadImage("Greg1313_1920.png");
+    mask = loadImage("Greg1313_1920.png");
+    //img = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
+    //mask = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
+    copy = createImage(1313, 1920, ARGB);
+    copy2 = createImage(1313, 1920, ARGB);
+    sunburst = loadShader("suntexture.glsl");
+    sunburst.set("resolution", 1313.f, 1920.f);
+    sunburst.set("texture", mask);
+  } else {
+    //HD
+    //size(600, 876, P2D);
+    noStroke();
+    img = loadImage("Greg600_876.png");
+    mask = img;
+    //img = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg600_876.png");
+    //mask = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg600_876.png");
+    copy = createImage(600, 876, ARGB);
+    copy2 = createImage(600, 876, ARGB);
+    sunburst = loadShader("suntexture.glsl");
+    sunburst.set("resolution", 600.f, 876.f);
+    sunburst.set("texture", mask);
+  }
 
   //loading pixels for mask
   loadPixels();  
@@ -161,14 +172,18 @@ void draw() {
   //image(img, 0, 0, width, height);
 }
 
-void keyPressed(){
-  if (key=='s'){saveFrame("test/test-###.png");}
-  if (keyCode==UP){maxPix+=1;}
-  if (keyCode==DOWN){
-      if(maxPix>1){
-        maxPix-=1;
-      }
+void keyPressed() {
+  if (key=='s') {
+    saveFrame("test/test-###.png");
+  }
+  if (keyCode==UP) {
+    maxPix+=1; println("maxPix", maxPix);
+  }
+  if (keyCode==DOWN) {
+    if (maxPix>1) {
+      maxPix-=1; println("maxPix", maxPix);
     }
+  }
 }
 //shader color calculations
 //117, 113, 182
