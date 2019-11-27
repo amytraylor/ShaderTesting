@@ -11,8 +11,8 @@ void setup() {
   blendMode(BLEND);
   //buf = createGraphics(width, height, P2D);
   //buf2 = createGraphics(width, height, P2D);
-  img = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
-  mask = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg_mask3.png");
+  img = loadImage("C:/Users/ganio/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
+  mask = loadImage("C:/Users/ganio/Documents/Thesis/ShaderTesting/images/Greg_mask3.png");
   copy = createImage(1313, 1920, ARGB);
   copy2 = createImage(1313, 1920, ARGB);
  

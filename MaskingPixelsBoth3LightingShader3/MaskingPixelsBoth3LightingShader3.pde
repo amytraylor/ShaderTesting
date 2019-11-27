@@ -20,7 +20,7 @@ void settings() {
 
 void setup() {
  // size(1313, 1920, P2D);
-  texlight = loadShader("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/shaders/pixlightxfrag.glsl", "C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/shaders/pixlightxvert.glsl");
+  texlight = loadShader("C:/Users/ganio/Documents/Thesis/ShaderTesting/shaders/pixlightxfrag.glsl", "C:/Users/ganio/Documents/Thesis/ShaderTesting/shaders/pixlightxvert.glsl");
  
  if (fourk) {
     //4k screen
@@ -29,8 +29,8 @@ void setup() {
     noStroke();
     //img = loadImage("Greg1313_1920.png");
     //mask = loadImage("Greg1313_1920.png");
-    img = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
-    mask = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
+    img = loadImage("C:/Users/ganio/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
+    mask = loadImage("C:/Users/ganio/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
     copy = createImage(1313, 1920, ARGB);
     copy2 = createImage(1313, 1920, ARGB);
 
@@ -40,8 +40,8 @@ void setup() {
     noStroke();
     //img = loadImage("Greg600_876.png");
     //mask = img;
-    img = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg600_876.png");
-    mask = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg600_876.png");
+    img = loadImage("C:/Users/ganio/Documents/Thesis/ShaderTesting/images/Greg600_876.png");
+    mask = loadImage("C:/Users/ganio/Documents/Thesis/ShaderTesting/images/Greg600_876.png");
     copy = createImage(600, 876, ARGB);
     copy2 = createImage(600, 876, ARGB);
   }

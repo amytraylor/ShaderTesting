@@ -5,8 +5,8 @@ PImage img, mask;
 void setup() {
   size(600, 876, P3D);
   noStroke();
-  img = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
-  mask = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg_mask3.png");
+  img = loadImage("C:/Users/ganio/Documents/Thesis/ShaderTesting/images/Flannery600_876.png");
+  mask = loadImage("C:/Users/ganio/Documents/Thesis/ShaderTesting/images/Greg_mask3.png");
   sunburst = loadShader("suntexture.glsl");
   sunburst.set("resolution", 600.f, 876.f);
   sunburst.set("texture", mask);

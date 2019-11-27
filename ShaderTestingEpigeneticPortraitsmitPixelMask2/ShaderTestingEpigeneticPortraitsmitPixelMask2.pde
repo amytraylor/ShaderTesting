@@ -36,7 +36,7 @@ void setup() {
     //HD
     //size(600, 876, P2D);
     noStroke();
-    img = loadImage("Greg600_876.png");
+    img = loadImage("C:/Users/ganio/Documents/Thesis/ShaderTesting/images/Aidan600_876.png");
     mask = img;
     //img = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg600_876.png");
     //mask = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg600_876.png");
@@ -104,8 +104,8 @@ void setup() {
 
 void draw() {
   //shader
-  float mapmx = map(mouseX, 0, width, 0, 2);
-  float mapmy = map(mouseY, 0, width, 1.1, 2.0);
+  float mapmx = map(mouseX, 0, width, 0, 1);
+  float mapmy = map(mouseY, 0, width, 0.1, 1.5);
   float mapmymove = map(mouseY, 0, width, 0.3, 0.7);
   sunburst.set("mousex", mapmx);
   sunburst.set("mousey", mapmy);

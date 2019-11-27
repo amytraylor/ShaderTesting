@@ -20,7 +20,8 @@ void settings() {
 
 void setup() {
  // size(1313, 1920, P2D);
-  texlight = loadShader("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/shaders/texlightfrag.glsl", "C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/shaders/texlightvert.glsl");
+ //C:\Users\ganio\Documents\Thesis\ShaderTesting\images
+  texlight = loadShader("C:/Users/ganio/Documents/Thesis/ShaderTesting/shaders/texlightfrag.glsl", "C:/Users/ganio/Documents/Thesis/ShaderTesting/shaders/texlightvert.glsl");
  
  if (fourk) {
     //4k screen
@@ -29,8 +30,8 @@ void setup() {
     noStroke();
     //img = loadImage("Greg1313_1920.png");
     //mask = loadImage("Greg1313_1920.png");
-    img = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
-    mask = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
+    img = loadImage("C:/Users/ganio/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
+    mask = loadImage("C:/Users/ganio/Documents/Thesis/ShaderTesting/images/Greg1313_1920.png");
     copy = createImage(1313, 1920, ARGB);
     copy2 = createImage(1313, 1920, ARGB);
 
@@ -40,8 +41,8 @@ void setup() {
     noStroke();
     //img = loadImage("Greg600_876.png");
     //mask = img;
-    img = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg600_876.png");
-    mask = loadImage("C:/Users/ganio/OneDrive/Documents/Thesis/ShaderTesting/images/Greg600_876.png");
+    img = loadImage("C:/Users/ganio/Documents/Thesis/ShaderTesting/images/Hawk600_876.png");
+    mask = loadImage("C:/Users/ganio/Documents/Thesis/ShaderTesting/images/Hawk600_876.png");
     copy = createImage(600, 876, ARGB);
     copy2 = createImage(600, 876, ARGB);
   }
@@ -51,7 +52,7 @@ void setup() {
   mask.loadPixels();
   ranS = new float[mask.pixels.length];
   for(int i = 0; i<mask.pixels.length; i++){
-    ranS[i] = random(0, 5);
+    ranS[i] = random(0, 2);
   }
   for (int x = 0; x < mask.width; x++) {
     for (int y = 0; y < mask.height; y++) {
@@ -123,7 +124,7 @@ void draw() {
     for(int y = 0; y<copy.height; y++){
       int loc = x + y*width;
        //controls size of blip 
-      if(grow){ if(smooth<maxPix){ smooth+=0.00020; } else {grow=false;}}else {if(smooth>0){smooth-=0.00020;} else { grow=true;}}
+      if(grow){ if(smooth<maxPix){ smooth+=0.0000020; } else {grow=false;}}else {if(smooth>0){smooth-=0.0000020;} else { grow=true;}}
       //println(smooth);
       if(copy.pixels[loc]<0){
         noStroke();
